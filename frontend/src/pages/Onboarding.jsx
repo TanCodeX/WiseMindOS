@@ -47,7 +47,7 @@ const Onboarding = () => {
     setGoals([
       ...goals,
       {
-        id: `temp-${Date.now()}`,
+        id: crypto.randomUUID(),
         title: trimmedTitle,
         type
       }
@@ -93,13 +93,13 @@ const Onboarding = () => {
 
     if (currentExecution.type === 'project') {
       goalMap.projects.push({
-        id: `temp-${Date.now()}`,
+        id: crypto.randomUUID(),
         title: currentExecution.title,
         deadline: currentExecution.deadline
       });
     } else {
       goalMap.tasks.push({
-        id: `temp-${Date.now()}`,
+        id: crypto.randomUUID(),
         title: currentExecution.title,
         deadline: currentExecution.deadline
       });
